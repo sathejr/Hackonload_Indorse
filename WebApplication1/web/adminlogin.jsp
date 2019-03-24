@@ -12,7 +12,7 @@
         <title>LOG IN PAGE</title>
     </head>
     <body>
-    <body bgcolor="yellow">
+    <body>
         <font color="red">
         
     <center> <h1>ADMIN LOGIN</h1>

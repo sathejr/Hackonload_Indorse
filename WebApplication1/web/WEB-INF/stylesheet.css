@@ -9,9 +9,14 @@ and open the template in the editor.
 */
 body{
     background-color: yellow;
+    background-image:url("C:\Users\Dell\Desktop\pic1.jpg")
+}
+back{
+    background-image:url("C:\Users\Dell\Desktop\pic1.jpg")
 }
 h1{
     color:orange;
     text-align: center;
+   
 }
 

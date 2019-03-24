@@ -10,10 +10,15 @@
     <head>
         <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
         <title>LOG IN PAGE</title>
-        <link href="WEB-INF/stylesheet.css" re="stylesheet" type="css/text">
+        <style>body{
+            background-image: url("C:\Users\Dell\Desktop\pic1");
+            }
+            </style>    
     </head>
     <body>
-    <body bgcolor="yellow">
+        
+    
+        
         <font color="red">
         
     <center> <h1>USER LOGIN</h1>

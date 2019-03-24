@@ -12,15 +12,15 @@
         <%
             try
             {
-        String pin = request.getParameter("pin");
+        String pin = request.getParameter("pi");
         out.println(pin);
-        String c = request.getParameter("city");
+        String c = request.getParameter("cit");
         out.println(c);
-        String tp = request.getParameter("type");
+        String tp = request.getParameter("typ");
         out.println(tp);
-        String isu = request.getParameter("issue");
+        String isu = request.getParameter("issu");
          out.println(isu);
-        String rb = request.getParameter("raise");
+        String rb = request.getParameter("rais");
         out.println(rb);
         
         

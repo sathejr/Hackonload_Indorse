@@ -20,7 +20,7 @@
              
             <br>   username             :<input type="text" name="username"></br>
             <br>   password             :<input type="password" name="password"></br>
-            <br>re-enter password    :<input type="password" name="password1"></br>
+            
             <br>adhar number         :<input type="text" name="adhar"></br>
             <br>phone number         :<input type="text" name="phone"></br>
             <br>pin         : <select name='pi'>

@@ -14,7 +14,7 @@
             {
         String username = request.getParameter("username");
         String password = request.getParameter("password");
-        String pas1 = request.getParameter("password1");
+        
 
         String adhar = request.getParameter("adhar");
         
@@ -25,7 +25,7 @@
         
       
          String stat = request.getParameter("st");
-         if(username=="" || password=="" || pas1=="" || adhar=="" || phone==""|| pin=="" || stat=="")
+         if(username=="" || password=="" || adhar=="" || phone==""|| pin=="" || stat=="")
          {
              response.sendRedirect("usrsignup.jsp");
          }

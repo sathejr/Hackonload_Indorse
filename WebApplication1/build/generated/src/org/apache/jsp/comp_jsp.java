@@ -3,8 +3,12 @@ package org.apache.jsp;
 import javax.servlet.*;
 import javax.servlet.http.*;
 import javax.servlet.jsp.*;
+import java.sql.*;
+import java.io.IOException;
+import java.sql.*;
+import java.io.*;
 
-public final class login_jsp extends org.apache.jasper.runtime.HttpJspBase
+public final class comp_jsp extends org.apache.jasper.runtime.HttpJspBase
     implements org.apache.jasper.runtime.JspSourceDependent {
 
   private static final JspFactory _jspxFactory = JspFactory.getDefaultFactory();
@@ -44,33 +48,50 @@ public final class login_jsp extends org.apache.jasper.runtime.HttpJspBase
       out.write("\n");
       out.write("\n");
       out.write("\n");
-      out.write("<!DOCTYPE html>\n");
-      out.write("<html>\n");
-      out.write("    <head>\n");
-      out.write("        <meta http-equiv=\"Content-Type\" content=\"text/html; charset=UTF-8\">\n");
-      out.write("        <title>LOG IN PAGE</title>\n");
-      out.write("        <style>body{\n");
-      out.write("            background-image: url(\"C:\\Users\\Dell\\Desktop\\pic1\");\n");
-      out.write("            }\n");
-      out.write("            </style>    \n");
-      out.write("    </head>\n");
-      out.write("    <body>\n");
+      out.write(" \n");
+      out.write("\n");
+      out.write("    <html> \n");
+      out.write("        <head>\n");
+      out.write("            <meta http-equiv=\"Content-Type\" content=\"text/html; charset=UTF-8\">\n");
+      out.write("            <title>Login Check</title> \n");
+      out.write("        </head> \n");
+      out.write("        <body> \n");
+      out.write("        ");
+
+            try
+            {
+        String pin = request.getParameter("pi");
+        out.println(pin);
+        String c = request.getParameter("cit");
+        out.println(c);
+        String tp = request.getParameter("typ");
+        out.println(tp);
+        String isu = request.getParameter("issu");
+         out.println(isu);
+        String rb = request.getParameter("rais");
+        out.println(rb);
+        
+        
+          String url="jdbc:mysql://localhost:7777/munciple";
+     String user="root";
+     String pass="root";
+     Class.forName("org.mariadb.jdbc.Driver");
+     Connection con=DriverManager.getConnection(url,user,pass);
+     Statement pst = con.createStatement();
+     String query="insert into problem (type,city,issue,raised_by) values ('"+tp+"','"+c+"','"+isu+"','"+rb+"');";
+     ResultSet rs = pst.executeQuery(query);
+     response.sendRedirect("usrcomp.jsp");
+            }
+            catch(Exception e)
+            {
+                System.out.println(e);
+            }
+            
+        
+      out.write("\n");
       out.write("        \n");
-      out.write("    \n");
       out.write("        \n");
-      out.write("        <font color=\"red\">\n");
-      out.write("        \n");
-      out.write("    <center> <h1>USER LOGIN</h1>\n");
-      out.write("        <a><a href=\"http://localhost:8080/WebApplication1/adminlogin.jsp\">admin login   |   </a>\n");
-      out.write("            <a><a href=\"http://localhost:8080/WebApplication1/usrsignup.jsp\">user sign up</a>    \n");
-      out.write("        <form name=\"demo\" method=\"post\" action=\"newjsp.jsp\">\n");
-      out.write("            <br>username:<input type=\"text\" name=\"username\"></br>\n");
-      out.write("            <br>password:<input type=\"password\" name=\"password\"></br>\n");
-      out.write("            </br><input type=\"submit\" value=\"login\"></br>\n");
-      out.write("        </form>\n");
-      out.write("    </center>\n");
-      out.write("    </body>\n");
-      out.write("</html>\n");
+      out.write("    ");
     } catch (Throwable t) {
       if (!(t instanceof SkipPageException)){
         out = _jspx_out;
