@@ -16,6 +16,10 @@
         <%
        String a=request.getParameter("pin");
        String b=request.getParameter("city");
+       if(a=="" || b=="")
+       {
+           response.sendRedirect("readpin.jsp");
+       }
        String url="jdbc:mysql://localhost:7777/munciple";
      String user="root";
      String pass="root";

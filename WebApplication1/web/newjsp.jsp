@@ -12,7 +12,11 @@
         <body> 
         <%
         String username = request.getParameter("username");
-        String password = request.getParameter("password"); 
+        String password = request.getParameter("password");
+        if(username=="" || password=="")
+        {
+            response.sendRedirect("login.jsp");
+        }
         session.setAttribute("usr", username);
         
                 %>

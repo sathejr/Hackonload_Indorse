@@ -56,7 +56,7 @@ public final class login_jsp extends org.apache.jasper.runtime.HttpJspBase
       out.write("        <font color=\"red\">\n");
       out.write("        \n");
       out.write("    <center> <h1>USER LOGIN</h1>\n");
-      out.write("        <a><a href=\"http://localhost:8080/WebApplication1/adminlogin.jsp\">admin login</a>\n");
+      out.write("        <a><a href=\"http://localhost:8080/WebApplication1/adminlogin.jsp\">admin login   |   </a>\n");
       out.write("            <a><a href=\"http://localhost:8080/WebApplication1/usrsignup.jsp\">user sign up</a>    \n");
       out.write("        <form name=\"demo\" method=\"post\" action=\"newjsp.jsp\">\n");
       out.write("            <br>username:<input type=\"text\" name=\"username\"></br>\n");

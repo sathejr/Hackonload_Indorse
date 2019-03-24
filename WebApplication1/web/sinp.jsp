@@ -16,6 +16,10 @@
         <%
        String a=request.getParameter("sid");
        String b=request.getParameter("sname");
+       if(a=="" || b=="")
+       {
+           response.sendRedirect("readstate.jsp");
+       }
        String url="jdbc:mysql://localhost:7777/munciple";
      String user="root";
      String pass="root";

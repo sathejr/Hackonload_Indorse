@@ -67,8 +67,78 @@ public final class usrsignup_jsp extends org.apache.jasper.runtime.HttpJspBase
       out.write("            <br>re-enter password    :<input type=\"password\" name=\"password1\"></br>\n");
       out.write("            <br>adhar number         :<input type=\"text\" name=\"adhar\"></br>\n");
       out.write("            <br>phone number         :<input type=\"text\" name=\"phone\"></br>\n");
-      out.write("            <br>pin         :<input type=\"text\" name=\"pin\"></br>\n");
-      out.write("            <br>state       :<input type=\"text\" name=\"state\"></br>\n");
+      out.write("            <br>pin         : <select name='pi'>\n");
+      out.write("     ");
+
+         String a=null;
+         String url="jdbc:mysql://localhost:7777/munciple";
+     String user="root";
+     String pass="root";
+         Class.forName("org.mariadb.jdbc.Driver");
+     Connection con=DriverManager.getConnection(url,user,pass);
+     Statement pst = con.createStatement();
+     String query="select pin from pin;";
+     
+     
+     ResultSet rs = pst.executeQuery(query);
+     while(rs.next())
+     {
+       a=rs.getString("pin");
+       
+       
+       
+      
+      out.write(" \n");
+      out.write("       \n");
+      out.write("          \n");
+      out.write("        <option value=\"");
+      out.print(a);
+      out.write('"');
+      out.write('>');
+      out.print(a);
+      out.write("</option>\n");
+      out.write("     ");
+ 
+     }
+String b=null;
+    
+      out.write("\n");
+      out.write("\n");
+      out.write("        \n");
+      out.write("             </select>\n");
+      out.write("        \n");
+      out.write("            <br>state       : <br>state         : <select name='st'>\n");
+      out.write("               ");
+ 
+                   String query1="select sid from state;";
+     
+      Statement pst1 = con.createStatement();
+     ResultSet rs1 = pst1.executeQuery(query1);
+     while(rs1.next())
+     {
+       a=rs1.getString("sid");
+       
+       
+       
+      
+       
+      out.write("\n");
+      out.write("          \n");
+      out.write("        <option value=\"");
+      out.print(a);
+      out.write('"');
+      out.write('>');
+      out.print(a);
+      out.write("</option>\n");
+      out.write("     ");
+ 
+     }
+    
+      out.write("\n");
+      out.write("\n");
+      out.write("        \n");
+      out.write("             </select>\n");
+      out.write("        \n");
       out.write("            <input type=\"submit\" onclick=\"alert(user added)\"  value=\"signup\"></button>\n");
       out.write("                \n");
       out.write("\n");

@@ -23,8 +23,60 @@
             <br>re-enter password    :<input type="password" name="password1"></br>
             <br>adhar number         :<input type="text" name="adhar"></br>
             <br>phone number         :<input type="text" name="phone"></br>
-            <br>pin         :<input type="text" name="pin"></br>
-            <br>state       :<input type="text" name="state"></br>
+            <br>pin         : <select name='pi'>
+     <%
+         String a=null;
+         String url="jdbc:mysql://localhost:7777/munciple";
+     String user="root";
+     String pass="root";
+         Class.forName("org.mariadb.jdbc.Driver");
+     Connection con=DriverManager.getConnection(url,user,pass);
+     Statement pst = con.createStatement();
+     String query="select pin from pin;";
+     
+     
+     ResultSet rs = pst.executeQuery(query);
+     while(rs.next())
+     {
+       a=rs.getString("pin");
+       
+       
+       
+      %> 
+       
+          
+        <option value="<%=a%>"><%=a%></option>
+     <% 
+     }
+String b=null;
+    %>
+
+        
+             </select>
+        
+            <br>state       : <br>state         : <select name='st'>
+               <% 
+                   String query1="select sid from state;";
+     
+      Statement pst1 = con.createStatement();
+     ResultSet rs1 = pst1.executeQuery(query1);
+     while(rs1.next())
+     {
+       a=rs1.getString("sid");
+       
+       
+       
+      
+       %>
+          
+        <option value="<%=a%>"><%=a%></option>
+     <% 
+     }
+    %>
+
+        
+             </select>
+        
             <input type="submit" onclick="alert(user added)"  value="signup"></button>
                 
 

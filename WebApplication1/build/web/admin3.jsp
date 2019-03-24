@@ -26,6 +26,10 @@
         String raise = request.getParameter("rais");
         String status=request.getParameter("com");
         String action=request.getParameter("act");
+        if(pin=="" || city=="" || type=="" || issue=="" || raise=="" || status=="" || action=="")
+        {
+            response.sendRedirect("error.jsp");
+        }
         
           String url="jdbc:mysql://localhost:7777/munciple";
      String user="root";
