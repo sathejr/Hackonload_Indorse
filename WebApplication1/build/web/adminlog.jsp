@@ -31,7 +31,7 @@
         ResultSet rs = pst.executeQuery();    
         out.println(rs);
         if(rs.next())           
-           response.sendRedirect("welcome.html");        
+           response.sendRedirect("admnhndl.jsp");        
         else
                        
              response.sendRedirect("error.html");    

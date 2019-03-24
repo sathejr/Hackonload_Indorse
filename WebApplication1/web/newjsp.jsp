@@ -16,9 +16,6 @@
         session.setAttribute("usr", username);
         
                 %>
-                <script> 
-                       localStorage.setItem('username','un');
-                       </script>
        
         <input type="text" name="use" value='<%=username%>'/>
         <%

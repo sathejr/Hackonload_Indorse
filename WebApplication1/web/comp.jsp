@@ -12,35 +12,27 @@
         <%
             try
             {
-        String username = request.getParameter("username");
-        String password = request.getParameter("password");
-        String pas1 = request.getParameter("password1");
-
-        String adhar = request.getParameter("adhar");
-        
-        String phone = request.getParameter("phone");
-       
         String pin = request.getParameter("pin");
-      
-         String state = request.getParameter("state");
+        out.println(pin);
+        String c = request.getParameter("city");
+        out.println(c);
+        String tp = request.getParameter("type");
+        out.println(tp);
+        String isu = request.getParameter("issue");
+         out.println(isu);
+        String rb = request.getParameter("raise");
+        out.println(rb);
+        
+        
           String url="jdbc:mysql://localhost:7777/munciple";
      String user="root";
      String pass="root";
      Class.forName("org.mariadb.jdbc.Driver");
      Connection con=DriverManager.getConnection(url,user,pass);
      Statement pst = con.createStatement();
-     String query="insert into user values('"+username+"','"+password+"','"+adhar+"','"+phone+"','"+state+"','"+pin+"');";
+     String query="insert into problem (type,city,issue,raised_by) values ('"+tp+"','"+c+"','"+isu+"','"+rb+"');";
      ResultSet rs = pst.executeQuery(query);
-     %>
-     <script type="text/javascript">
-          function alertname()
-          {
-              alert("user added")
-          }
-          
-          <%response.sendRedirect("login.jsp");%>  
-         
-     <%
+     response.sendRedirect("usrcomp.jsp");
             }
             catch(Exception e)
             {
@@ -48,4 +40,6 @@
             }
             
         %>
+        
+        
     

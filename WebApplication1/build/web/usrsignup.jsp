@@ -25,7 +25,7 @@
             <br>phone number         :<input type="text" name="phone"></br>
             <br>pin         :<input type="text" name="pin"></br>
             <br>state       :<input type="text" name="state"></br>
-            <input type="submit"  value="signup"></button>
+            <input type="submit" onclick="alert(user added)"  value="signup"></button>
                 
 
     

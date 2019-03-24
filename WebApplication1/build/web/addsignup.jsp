@@ -13,17 +13,15 @@
             try
             {
         String username = request.getParameter("username");
-        out.println(username);
         String password = request.getParameter("password");
-        out.println(password);
         String pas1 = request.getParameter("password1");
-        out.println(pas1);
+
         String adhar = request.getParameter("adhar");
-         out.println(adhar);
+        
         String phone = request.getParameter("phone");
-        out.println(phone);
+       
         String pin = request.getParameter("pin");
-        out.println(pin);
+      
          String state = request.getParameter("state");
           String url="jdbc:mysql://localhost:7777/munciple";
      String user="root";
@@ -33,6 +31,16 @@
      Statement pst = con.createStatement();
      String query="insert into user values('"+username+"','"+password+"','"+adhar+"','"+phone+"','"+state+"','"+pin+"');";
      ResultSet rs = pst.executeQuery(query);
+     %>
+     <script type="text/javascript">
+          function alertname()
+          {
+              alert("user added")
+          }
+          
+          <%response.sendRedirect("login.jsp");%>  
+         
+     <%
             }
             catch(Exception e)
             {

@@ -4,7 +4,7 @@ import javax.servlet.*;
 import javax.servlet.http.*;
 import javax.servlet.jsp.*;
 
-public final class login_jsp extends org.apache.jasper.runtime.HttpJspBase
+public final class admnhndl_jsp extends org.apache.jasper.runtime.HttpJspBase
     implements org.apache.jasper.runtime.JspSourceDependent {
 
   private static final JspFactory _jspxFactory = JspFactory.getDefaultFactory();
@@ -48,22 +48,23 @@ public final class login_jsp extends org.apache.jasper.runtime.HttpJspBase
       out.write("<html>\n");
       out.write("    <head>\n");
       out.write("        <meta http-equiv=\"Content-Type\" content=\"text/html; charset=UTF-8\">\n");
-      out.write("        <title>LOG IN PAGE</title>\n");
-      out.write("        <link href=\"WEB-INF/stylesheet.css\" re=\"stylesheet\" type=\"css/text\">\n");
+      out.write("        <title>JSP Page</title>\n");
       out.write("    </head>\n");
       out.write("    <body>\n");
-      out.write("    <body bgcolor=\"yellow\">\n");
-      out.write("        <font color=\"red\">\n");
+      out.write("        <h1>Administrator</h1>\n");
+      out.write("        <form action='error.jsp' method=\"get\">\n");
+      out.write("        <select name='comp'>\n");
+      out.write("            <option value=\"roa\">road</option>\n");
+      out.write("             <option value=\"water\">water</option>\n");
+      out.write("             </select>\n");
+      out.write("            <input type='submit' name='sel' value=\"submit\"></input>\n");
       out.write("        \n");
-      out.write("    <center> <h1>USER LOGIN</h1>\n");
-      out.write("        <a><a href=\"http://localhost:8080/WebApplication1/adminlogin.jsp\">admin login</a>\n");
-      out.write("            <a><a href=\"http://localhost:8080/WebApplication1/usrsignup.jsp\">user sign up</a>    \n");
-      out.write("        <form name=\"demo\" method=\"post\" action=\"newjsp.jsp\">\n");
-      out.write("            <br>username:<input type=\"text\" name=\"username\"></br>\n");
-      out.write("            <br>password:<input type=\"password\" name=\"password\"></br>\n");
-      out.write("            </br><input type=\"submit\" value=\"login\"></br>\n");
-      out.write("        </form>\n");
-      out.write("    </center>\n");
+      out.write("            </form>\n");
+      out.write("     \n");
+      out.write("        \n");
+      out.write("        \n");
+      out.write("        \n");
+      out.write("        \n");
       out.write("    </body>\n");
       out.write("</html>\n");
     } catch (Throwable t) {

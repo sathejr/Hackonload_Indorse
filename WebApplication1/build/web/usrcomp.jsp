@@ -18,37 +18,15 @@
         <title>JSP Page</title>
         
     </head>
-    <body> 
-        <center> <h1>USER SIGNUP</h1>
-      
-        
-        <form name="demo" method="post" action="addsignup.jsp">
-             
-            <br>   username             :<input type="text" name="username"></br>
-            <br>   password             :<input type="password" name="password"></br>
-            <br>re-enter password    :<input type="password" name="password1"></br>
-            <br>adhar number         :<input type="text" name="adhar"></br>
-            <br>phone number         :<input type="text" name="phone"></br>
-            <br>pin         :<input type="text" name="pin"></br>
-            <br>state       :<input type="text" name="state"></br>
-            <input type="submit"  value="signup"></button>
-                
-
-    
-        </form>
-    </center>
-        
-        
-       
+    <body>                  
             
-            
-         <form name="demo" method="post" action="addsignup.jsp">
+         <form name="demo" method="post" action="comp.jsp">
              
-            <br>PIN           :<input type="text" name="username"></br>
-            <br>CITY          :<input type="password" name="password"></br>
-            <br>TYPE          :<input type="password" name="password1"></br>
-            <br>ISSUE         :<input type="text" name="adhar"></br>
-            <br>RAISED BY     :
+            <br>PIN           :<input type="text" name="pin"></br>
+            <br>CITY          :<input type="text" name="city"></br>
+            <br>TYPE          :<input type="text" name="type"></br>
+            <br>ISSUE         :<input type="text" name="issue"></br>
+            <br>ENTER USERNAME:<input type="text" name="raise"></br>
             
             
             <input type="submit"  value="signup"></button>

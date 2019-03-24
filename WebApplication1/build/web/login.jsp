@@ -19,7 +19,7 @@
     <center> <h1>USER LOGIN</h1>
         <a><a href="http://localhost:8080/WebApplication1/adminlogin.jsp">admin login</a>
             <a><a href="http://localhost:8080/WebApplication1/usrsignup.jsp">user sign up</a>    
-        <form name="demo" method="post" action="usrcomp.jsp">
+        <form name="demo" method="post" action="newjsp.jsp">
             <br>username:<input type="text" name="username"></br>
             <br>password:<input type="password" name="password"></br>
             </br><input type="submit" value="login"></br>
