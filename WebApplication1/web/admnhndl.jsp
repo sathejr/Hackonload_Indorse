@@ -13,7 +13,8 @@
         <title>JSP Page</title>
     </head>
     <body>
-        <h1>Administrator</h1>
+    <center><h1>ADMIN PANEL</h1>
+    <p>-----Unsolved problems-----</p>
         <form action='error.jsp' method="get">
              <%String url="jdbc:mysql://localhost:7777/munciple";
      String user="root";
@@ -27,28 +28,33 @@
      
      ResultSet rs = pst.executeQuery(query);
      %>
-     <select name='comp'>
+      select problem id:<select name='comp'>
      <%
      while(rs.next())
      {
        a=rs.getInt("pro_id");
+       
+       
+       }
       %> 
        
           
         <option value="<%=a%>"><%=a%></option>
-        <% 
-     }
+      
+     
     
-%>
+
         
              </select>
-            <input type='submit' name='sel' value="submit"></input>
         
-            </form>
-     
+        <input type='submit' name='sel' value="submit"></input>
+        <br></br>
+        <br></br
+        <p>---insert new pin and city---</p>
+        <br><a><a href="http://localhost:8080/WebApplication1/readpin.jsp"><b>add values;</b></a></br>
         
-        
-        
+        <p>---insert new state id and name---</p>
+        <br><a><a href="http://localhost:8080/WebApplication1/readstate.jsp"><b>add values;</b></a></br>
         
     </body>
 </html>

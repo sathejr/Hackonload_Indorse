@@ -53,7 +53,8 @@ public final class admnhndl_jsp extends org.apache.jasper.runtime.HttpJspBase
       out.write("        <title>JSP Page</title>\n");
       out.write("    </head>\n");
       out.write("    <body>\n");
-      out.write("        <h1>Administrator</h1>\n");
+      out.write("    <center><h1>ADMIN PANEL</h1>\n");
+      out.write("    <p>-----Unsolved problems-----</p>\n");
       out.write("        <form action='error.jsp' method=\"get\">\n");
       out.write("             ");
 String url="jdbc:mysql://localhost:7777/munciple";
@@ -69,12 +70,15 @@ String url="jdbc:mysql://localhost:7777/munciple";
      ResultSet rs = pst.executeQuery(query);
      
       out.write("\n");
-      out.write("     <select name='comp'>\n");
+      out.write("      select problem id:<select name='comp'>\n");
       out.write("     ");
 
      while(rs.next())
      {
        a=rs.getInt("pro_id");
+       
+       
+       }
       
       out.write(" \n");
       out.write("       \n");
@@ -85,21 +89,21 @@ String url="jdbc:mysql://localhost:7777/munciple";
       out.write('>');
       out.print(a);
       out.write("</option>\n");
-      out.write("        ");
- 
-     }
-    
-
+      out.write("      \n");
+      out.write("     \n");
+      out.write("    \n");
       out.write("\n");
       out.write("        \n");
       out.write("             </select>\n");
-      out.write("            <input type='submit' name='sel' value=\"submit\"></input>\n");
       out.write("        \n");
-      out.write("            </form>\n");
-      out.write("     \n");
+      out.write("        <input type='submit' name='sel' value=\"submit\"></input>\n");
+      out.write("        <br></br>\n");
+      out.write("        <br></br\n");
+      out.write("        <p>---insert new pin and city---</p>\n");
+      out.write("        <br><a><a href=\"http://localhost:8080/WebApplication1/readpin.jsp\"><b>add values;</b></a></br>\n");
       out.write("        \n");
-      out.write("        \n");
-      out.write("        \n");
+      out.write("        <p>---insert new state id and name---</p>\n");
+      out.write("        <br><a><a href=\"http://localhost:8080/WebApplication1/readstate.jsp\"><b>add values;</b></a></br>\n");
       out.write("        \n");
       out.write("    </body>\n");
       out.write("</html>\n");

@@ -3,12 +3,8 @@ package org.apache.jsp;
 import javax.servlet.*;
 import javax.servlet.http.*;
 import javax.servlet.jsp.*;
-import java.sql.*;
-import java.io.IOException;
-import java.sql.*;
-import java.io.*;
 
-public final class adminlog_jsp extends org.apache.jasper.runtime.HttpJspBase
+public final class readpin_jsp extends org.apache.jasper.runtime.HttpJspBase
     implements org.apache.jasper.runtime.JspSourceDependent {
 
   private static final JspFactory _jspxFactory = JspFactory.getDefaultFactory();
@@ -48,48 +44,27 @@ public final class adminlog_jsp extends org.apache.jasper.runtime.HttpJspBase
       out.write("\n");
       out.write("\n");
       out.write("\n");
-      out.write(" \n");
-      out.write("\n");
-      out.write("    <html> \n");
-      out.write("        <head>\n");
-      out.write("            <meta http-equiv=\"Content-Type\" content=\"text/html; charset=UTF-8\">\n");
-      out.write("            <title>Login Check</title> \n");
-      out.write("        </head> \n");
-      out.write("        <body> \n");
-      out.write("        ");
-
-        String username = request.getParameter("username");
-        String password = request.getParameter("password");
-    
-        
-        
-        
-        
-       try
-       {
-        String url="jdbc:mysql://localhost:7777/munciple";
-        String user="root";
-        String pass="root";
-        Class.forName("org.mariadb.jdbc.Driver");
-        Connection con=DriverManager.getConnection(url,user,pass);
-        out.println("hei");
-        PreparedStatement pst = con.prepareStatement("Select username,password from admin where username=? and password=?;");
-        pst.setString(1, username);
-        pst.setString(2, password);
-        ResultSet rs = pst.executeQuery();    
-        out.println(rs);
-        if(rs.next())           
-           response.sendRedirect("admnhndl.jsp");        
-        else
-                       
-             response.sendRedirect("error.html");    
-                }catch(Exception e){
-                    System.out.println("Exception occured! "+e.getMessage()+" "+e.getStackTrace());
-                }  
-    
-      out.write("\n");
-      out.write("           </body>\n");
-      out.write("    </html>");
+      out.write("<!DOCTYPE html>\n");
+      out.write("<html>\n");
+      out.write("    <head>\n");
+      out.write("        <meta http-equiv=\"Content-Type\" content=\"text/html; charset=UTF-8\">\n");
+      out.write("        <title>JSP Page</title>\n");
+      out.write("    </head>\n");
+      out.write("    <body>\n");
+      out.write("        <script>\n");
+      out.write("            function my()\n");
+      out.write("            {\n");
+      out.write("                alert(\"values added\");\n");
+      out.write("            }\n");
+      out.write("            </script>\n");
+      out.write("      <form action=\"pin.jsp\" method=\"post\">\n");
+      out.write("          <br>PIN NO:<input type=\"text\" name=\"pin\"></br>\n");
+      out.write("          <br>CITY NAME:<input type=\"text\" name=\"city\"></br>\n");
+      out.write("          <br><input type=\"submit\" onclick=\"my()\" value=\"ADD\"></br>\n");
+      out.write("        </form>\n");
+      out.write("     \n");
+      out.write("    </body>\n");
+      out.write("</html>\n");
     } catch (Throwable t) {
       if (!(t instanceof SkipPageException)){
         out = _jspx_out;

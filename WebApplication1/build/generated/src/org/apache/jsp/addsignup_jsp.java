@@ -86,8 +86,7 @@ public final class addsignup_jsp extends org.apache.jasper.runtime.HttpJspBase
       out.write("          {\n");
       out.write("              alert(\"user added\")\n");
       out.write("          }\n");
-      out.write("          </script>\n");
-      out.write("          <script type=\"text/javascript\">window.onload=alertname;</script>\n");
+      out.write("          \n");
       out.write("          ");
 response.sendRedirect("login.jsp");
       out.write("  \n");

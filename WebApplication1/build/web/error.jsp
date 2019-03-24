@@ -34,13 +34,17 @@
      while(rs.next())
      {
          z=rs.getInt("pro_id");
-          out.println(z);
          a=rs.getString("type");
          b=rs.getString("city");
          c=rs.getString("issue");
          d=rs.getString("raised_by");
          f=rs.getString("action");
      }
+         if(z==0)
+       {
+           
+          response.sendRedirect("admnhndl.jsp");
+       }
      
  ResultSet rs1 = pst.executeQuery(q2);
  

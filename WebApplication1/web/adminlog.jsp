@@ -35,7 +35,9 @@
         else
                        
              response.sendRedirect("error.html");    
-                }catch(Exception e){
+                }
+       
+       catch(Exception e){
                     System.out.println("Exception occured! "+e.getMessage()+" "+e.getStackTrace());
                 }  
     %>

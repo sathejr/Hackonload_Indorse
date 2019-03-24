@@ -69,7 +69,7 @@ public final class usrsignup_jsp extends org.apache.jasper.runtime.HttpJspBase
       out.write("            <br>phone number         :<input type=\"text\" name=\"phone\"></br>\n");
       out.write("            <br>pin         :<input type=\"text\" name=\"pin\"></br>\n");
       out.write("            <br>state       :<input type=\"text\" name=\"state\"></br>\n");
-      out.write("            <input type=\"submit\"  value=\"signup\"></button>\n");
+      out.write("            <input type=\"submit\" onclick=\"alert(user added)\"  value=\"signup\"></button>\n");
       out.write("                \n");
       out.write("\n");
       out.write("    \n");

@@ -15,6 +15,7 @@
     <body>
         <%
             String pid = request.getParameter("pi");
+        
         String pin = request.getParameter("pi");
         String city = request.getParameter("cit");
 

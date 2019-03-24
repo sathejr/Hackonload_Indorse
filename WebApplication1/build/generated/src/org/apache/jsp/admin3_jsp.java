@@ -56,6 +56,7 @@ public final class admin3_jsp extends org.apache.jasper.runtime.HttpJspBase
       out.write("        ");
 
             String pid = request.getParameter("pi");
+        
         String pin = request.getParameter("pi");
         String city = request.getParameter("cit");
 
@@ -65,6 +66,7 @@ public final class admin3_jsp extends org.apache.jasper.runtime.HttpJspBase
        
         String raise = request.getParameter("rais");
         String status=request.getParameter("com");
+        String action=request.getParameter("act");
         
           String url="jdbc:mysql://localhost:7777/munciple";
      String user="root";
@@ -72,7 +74,7 @@ public final class admin3_jsp extends org.apache.jasper.runtime.HttpJspBase
      Class.forName("org.mariadb.jdbc.Driver");
      Connection con=DriverManager.getConnection(url,user,pass);
      Statement pst = con.createStatement();
-     String query="update problem set status='"+status+"' where pro_id='"+pid+"';";
+     String query="update problem set status='"+status+"', action='"+action+"' where pro_id='"+pid+"';";
      pst.executeUpdate(query);
      
         
