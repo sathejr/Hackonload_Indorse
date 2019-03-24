@@ -22,11 +22,11 @@
             
          <form name="demo" method="post" action="comp.jsp">
              
-            <br>PIN           :<input type="text" name="pin"></br>
-            <br>CITY          :<input type="text" name="city"></br>
-            <br>TYPE          :<input type="text" name="type"></br>
-            <br>ISSUE         :<input type="text" name="issue"></br>
-            <br>ENTER USERNAME:<input type="text" name="raise"></br>
+            <br>PIN           :<input type="text" name="pi"></br>
+            <br>CITY          :<input type="text" name="cit"></br>
+            <br>TYPE          :<input type="text" name="typ"></br>
+            <br>ISSUE         :<input type="text" name="issu"></br>
+            <br>ENTER USERNAME:<input type="text" name="rais"></br>
             
             
             <input type="submit"  value="signup"></button>

@@ -5,7 +5,7 @@ import javax.servlet.http.*;
 import javax.servlet.jsp.*;
 import java.sql.*;
 
-public final class admnhndl_jsp extends org.apache.jasper.runtime.HttpJspBase
+public final class admin3_jsp extends org.apache.jasper.runtime.HttpJspBase
     implements org.apache.jasper.runtime.JspSourceDependent {
 
   private static final JspFactory _jspxFactory = JspFactory.getDefaultFactory();
@@ -53,54 +53,30 @@ public final class admnhndl_jsp extends org.apache.jasper.runtime.HttpJspBase
       out.write("        <title>JSP Page</title>\n");
       out.write("    </head>\n");
       out.write("    <body>\n");
-      out.write("        <h1>Administrator</h1>\n");
-      out.write("        <form action='error.jsp' method=\"get\">\n");
-      out.write("             ");
-String url="jdbc:mysql://localhost:7777/munciple";
+      out.write("        ");
+
+            String pid = request.getParameter("pi");
+        String pin = request.getParameter("pi");
+        String city = request.getParameter("cit");
+
+        String type = request.getParameter("typ");
+        
+        String issue = request.getParameter("issu");
+       
+        String raise = request.getParameter("rais");
+        String status=request.getParameter("com");
+        
+          String url="jdbc:mysql://localhost:7777/munciple";
      String user="root";
      String pass="root";
-    int a=0;
      Class.forName("org.mariadb.jdbc.Driver");
      Connection con=DriverManager.getConnection(url,user,pass);
      Statement pst = con.createStatement();
-     String query="select pro_id from problem where status='not hanadled';";
+     String query="update problem set status='"+status+"' where pro_id='"+pid+"';";
+     pst.executeUpdate(query);
      
-     
-     ResultSet rs = pst.executeQuery(query);
-     
+        
       out.write("\n");
-      out.write("     <select name='comp'>\n");
-      out.write("     ");
-
-     while(rs.next())
-     {
-       a=rs.getInt("pro_id");
-      
-      out.write(" \n");
-      out.write("       \n");
-      out.write("          \n");
-      out.write("        <option value=\"");
-      out.print(a);
-      out.write('"');
-      out.write('>');
-      out.print(a);
-      out.write("</option>\n");
-      out.write("        ");
- 
-     }
-    
-
-      out.write("\n");
-      out.write("        \n");
-      out.write("             </select>\n");
-      out.write("            <input type='submit' name='sel' value=\"submit\"></input>\n");
-      out.write("        \n");
-      out.write("            </form>\n");
-      out.write("     \n");
-      out.write("        \n");
-      out.write("        \n");
-      out.write("        \n");
-      out.write("        \n");
       out.write("    </body>\n");
       out.write("</html>\n");
     } catch (Throwable t) {

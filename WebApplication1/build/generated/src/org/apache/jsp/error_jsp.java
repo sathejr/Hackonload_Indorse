@@ -5,7 +5,7 @@ import javax.servlet.http.*;
 import javax.servlet.jsp.*;
 import java.sql.*;
 
-public final class admnhndl_jsp extends org.apache.jasper.runtime.HttpJspBase
+public final class error_jsp extends org.apache.jasper.runtime.HttpJspBase
     implements org.apache.jasper.runtime.JspSourceDependent {
 
   private static final JspFactory _jspxFactory = JspFactory.getDefaultFactory();
@@ -53,54 +53,68 @@ public final class admnhndl_jsp extends org.apache.jasper.runtime.HttpJspBase
       out.write("        <title>JSP Page</title>\n");
       out.write("    </head>\n");
       out.write("    <body>\n");
-      out.write("        <h1>Administrator</h1>\n");
-      out.write("        <form action='error.jsp' method=\"get\">\n");
-      out.write("             ");
-String url="jdbc:mysql://localhost:7777/munciple";
+      out.write("        <form action=\"admin3.jsp\" method=\"get\">\n");
+      out.write("       ");
+ 
+           String s=request.getParameter("comp");
+           
+            String url="jdbc:mysql://localhost:7777/munciple";
      String user="root";
      String pass="root";
-    int a=0;
+      int z=0;String a=null,b=null,c=null,d=null,e=null;
      Class.forName("org.mariadb.jdbc.Driver");
      Connection con=DriverManager.getConnection(url,user,pass);
      Statement pst = con.createStatement();
-     String query="select pro_id from problem where status='not hanadled';";
-     
+     String query="select * from problem where pro_id='"+s+"';";
+     String q2="select p.pin from pin p,problem where  city=post_name and pro_id='"+s+"';";
      
      ResultSet rs = pst.executeQuery(query);
+    
+      
      
-      out.write("\n");
-      out.write("     <select name='comp'>\n");
-      out.write("     ");
-
      while(rs.next())
      {
-       a=rs.getInt("pro_id");
-      
-      out.write(" \n");
-      out.write("       \n");
-      out.write("          \n");
-      out.write("        <option value=\"");
-      out.print(a);
-      out.write('"');
-      out.write('>');
-      out.print(a);
-      out.write("</option>\n");
-      out.write("        ");
- 
+         z=rs.getInt("pro_id");
+          out.println(z);
+         a=rs.getString("type");
+         b=rs.getString("city");
+         c=rs.getString("issue");
+         d=rs.getString("raised_by");
      }
-    
-
+     
+ ResultSet rs1 = pst.executeQuery(q2);
+ 
+if(rs1.next())
+{
+ e=rs1.getString("pin");
+}
+           
       out.write("\n");
-      out.write("        \n");
-      out.write("             </select>\n");
-      out.write("            <input type='submit' name='sel' value=\"submit\"></input>\n");
-      out.write("        \n");
-      out.write("            </form>\n");
-      out.write("     \n");
-      out.write("        \n");
-      out.write("        \n");
-      out.write("        \n");
-      out.write("        \n");
+      out.write("             <br>PID           :<input type=\"text\" value=\"");
+      out.print(z);
+      out.write("\" name=\"pi\"></br>\n");
+      out.write("            <br>PIN           :<input type=\"text\" value=\"");
+      out.print(e);
+      out.write("\" name=\"pi\"></br>\n");
+      out.write("            <br>CITY          :<input type=\"text\" value=\"");
+      out.print(b);
+      out.write("\" name=\"cit\"></br>\n");
+      out.write("            <br>TYPE          :<input type=\"text\"  value=\"");
+      out.print(a);
+      out.write("\"name=\"typ\"></br>\n");
+      out.write("            <br>ISSUE         :<input type=\"text\" value=\"");
+      out.print(c);
+      out.write("\" name=\"issu\"></br>\n");
+      out.write("            <br> RAISED BY:<input type=\"text\" value=\"");
+      out.print(d);
+      out.write("\" name=\"rais\"></br>\n");
+      out.write("            <br>Status    :<select name=\"com\">\n");
+      out.write("                <option value=\"Not Handled\">Not Handled</option>\n");
+      out.write("                <option value=\"Handled\">Handled</option>\n");
+      out.write("            </select>\n");
+      out.write("            \n");
+      out.write("            <input type=\"submit\" value='Update' >\n");
+      out.write("        </form>\n");
       out.write("    </body>\n");
       out.write("</html>\n");
     } catch (Throwable t) {

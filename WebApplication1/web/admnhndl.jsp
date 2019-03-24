@@ -4,6 +4,7 @@
     Author     : Dell
 --%>
 
+<%@page import="java.sql.*"%>
 <%@page contentType="text/html" pageEncoding="UTF-8"%>
 <!DOCTYPE html>
 <html>
@@ -14,9 +15,32 @@
     <body>
         <h1>Administrator</h1>
         <form action='error.jsp' method="get">
-        <select name='comp'>
-            <option value="roa">road</option>
-             <option value="water">water</option>
+             <%String url="jdbc:mysql://localhost:7777/munciple";
+     String user="root";
+     String pass="root";
+    int a=0;
+     Class.forName("org.mariadb.jdbc.Driver");
+     Connection con=DriverManager.getConnection(url,user,pass);
+     Statement pst = con.createStatement();
+     String query="select pro_id from problem where status='not hanadled';";
+     
+     
+     ResultSet rs = pst.executeQuery(query);
+     %>
+     <select name='comp'>
+     <%
+     while(rs.next())
+     {
+       a=rs.getInt("pro_id");
+      %> 
+       
+          
+        <option value="<%=a%>"><%=a%></option>
+        <% 
+     }
+    
+%>
+        
              </select>
             <input type='submit' name='sel' value="submit"></input>
         
